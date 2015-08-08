@@ -1,11 +1,13 @@
 /**
  * Created by Taichi1 on 8/6/15.
  */
-var React = require('react');
-var Routehandler = require("react-router").RouteHandler;
-var SearchGithub = require("./SearchGithub");
-var Main = React.createClass({
-    render: function () {
+import React from 'react';
+import {RouteHandler} from 'react-router';
+import SearchGithub from'./SearchGithub.js';
+
+class Main extends React.Component {
+    render() {
+        "use strict";
         return (
             <div className="main-container">
                 <nav className="navbar navbar-default" role="navigation">
@@ -14,12 +16,11 @@ var Main = React.createClass({
                     </div>
                 </nav>
                 <div className="container">
-                    <Routehandler />
+                    <RouteHandler {...this.props}/>
                 </div>
             </div>
         )
     }
-});
-//React.render(<Main />, document.getElementById('app'));
+}
 
 module.exports = Main;

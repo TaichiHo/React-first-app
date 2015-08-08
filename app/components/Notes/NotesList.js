@@ -2,17 +2,18 @@
  * Created by Taichi1 on 8/7/15.
  */
 
-var React = require('react');
+import React from 'react';
 
-var NotesList = React.createClass({
-    render: function () {
-        var notes = this.props.notes.map(function (note, index) {
+class NotesList extends React.Component {
+    render() {
+        "use strict";
+        var notes = this.props.notes.map((note, index)=> {
             "use strict";
             //console.log(note.value);
             //console.log(note);
             return (
                 <li className="list-group-item" key={index}>
-                  {note}
+                    {note}
                 </li>);
         });
         return (
@@ -21,6 +22,5 @@ var NotesList = React.createClass({
             </ul>
         )
     }
-
-});
-module.exports = NotesList;
+}
+export default NotesList;

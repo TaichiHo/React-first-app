@@ -51,7 +51,7 @@ var Profile = React.createClass({
             .then(function (dataObj) {
                 "use strict";
                 this.setState({
-                    bio: dataObj.bio,
+                     bio: dataObj.bio,
                     repos: dataObj.repos
                 })
 

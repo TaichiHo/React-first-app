@@ -3,16 +3,12 @@
  */
 
 
-var React = require('react');
-
-var Repos = React.createClass({
-    propTypes: {
-        username: React.PropTypes.string.isRequired,
-        repos: React.PropTypes.array.isRequired
-    },
-    render: function () {
+//var React = require('react');
+import React from 'react';
+class Repos extends React.Component {
+    render() {
         "use strict";
-        var repos = this.props.repos.map(function (repo, index) {
+        var repos = this.props.repos.map((repo, index) => {
             return (
                 <li className="list-group-item" key={index}>
                     {repo.html_url &&
@@ -36,6 +32,11 @@ var Repos = React.createClass({
             </div>
         )
     }
-});
+}
+Repos.propTypes = {
+    username: React.PropTypes.string.isRequired,
+    repos: React.PropTypes.array.isRequired
+};
 
 module.exports = Repos;
+export default Repos;
